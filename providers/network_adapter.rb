@@ -12,7 +12,7 @@ action :set_ipv4_address do
     netsh_command = "#{netsh} interface ipv4 set address #{@new_resource.adapter_name}" +
         " static #{@new_resource.ipv4_address} #{@new_resource.ipv4_netmask} #{@new_resource.ipv4_gateway}"
     Chef::Log.info "netsh command is #{netsh_command}"
-    #shell_out!(netsh_command)
+    shell_out!(netsh_command)
   end
 end
 
